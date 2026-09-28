@@ -1,3 +1,4 @@
+
 import {
   CalendarDays,
   ChevronDown,
@@ -9,6 +10,7 @@ import {
   NotebookTabs,
   ShoppingCart,
   Users,
+  X,
 } from "lucide-react";
 import { NavLink, useNavigate } from "react-router-dom";
 
@@ -66,113 +68,142 @@ const menuItems = [
   },
 ];
 
-function Sidebar() {
+interface SidebarProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+function Sidebar({ isOpen, onClose }: SidebarProps) {
   const navigate = useNavigate();
 
   return (
-    <aside className="hidden w-[210px] shrink-0 border-r border-gray-100 bg-white lg:block">
-      
-      <div className="flex h-[64px] items-center gap-2 border-b border-gray-100 px-5">
-        <div className="flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-br from-green-400 to-teal-500 text-[11px] font-bold text-white">
-          F
+    <>
+  
+      {isOpen && (
+        <div
+          className="fixed inset-0 z-40 bg-black/20 lg:hidden"
+          onClick={onClose}
+        />
+      )}
+
+      <aside
+        className={`
+          w-[210px] shrink-0 border-r border-gray-100 bg-white
+          lg:block
+          ${
+            isOpen
+              ? "fixed inset-y-0 left-0 z-50 block"
+              : "hidden"
+          }
+        `}
+      >
+        
+        <div className="flex h-[64px] items-center gap-2 border-b border-gray-100 px-5">
+          <div className="flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-br from-green-400 to-teal-500 text-[11px] font-bold text-white">
+            F
+          </div>
+
+          <span className="text-[11px] font-semibold tracking-wide text-gray-700">
+            FLOWER
+          </span>
+
+          
+          <button
+            type="button"
+            onClick={onClose}
+            className="ml-auto text-gray-500 lg:hidden"
+            aria-label="Close sidebar"
+          >
+            <X size={16} />
+          </button>
         </div>
 
-        <span className="text-[11px] font-semibold tracking-wide text-gray-700">
-          FLOWER
-        </span>
-      </div>
-
-      
-      <div className="px-3 pt-4">
-        <div className="flex h-8 items-center rounded-md bg-gray-50 px-2 text-[10px] text-gray-400">
-          <span className="mr-2">⌕</span>
-          Search anything
+        
+        <div className="px-3 pt-4">
+          <div className="flex h-8 items-center rounded-md bg-gray-50 px-2 text-[10px] text-gray-400">
+            <span className="mr-2">⌕</span>
+            Search anything
+          </div>
         </div>
-      </div>
 
-      
-      <div className="mt-5 px-3">
-        <p className="mb-2 px-2 text-[8px] font-medium uppercase tracking-wider text-gray-400">
-          Main Menu
-        </p>
+        
+        <div className="mt-5 px-3">
+          <p className="mb-2 px-2 text-[8px] font-medium uppercase tracking-wider text-gray-400">
+            Main Menu
+          </p>
 
-        <nav className="space-y-1">
-          {menuItems.map((item) => {
-            const Icon = item.icon;
+          <nav className="space-y-1">
+            {menuItems.map((item) => {
+              const Icon = item.icon;
 
-            
-            if (item.isEcommerce) {
-              return <EcommerceMenu key={item.label} />;
-            }
+              
+              if (item.isEcommerce) {
+                return <EcommerceMenu key={item.label} />;
+              }
 
-            
-            if (item.label === "Chat") {
+              
+              if (item.label === "Chat") {
+                return (
+                  <button
+                    key={item.label}
+                    type="button"
+                    onClick={() => {
+                      navigate(item.path!);
+                      onClose();
+                    }}
+                    className="relative flex w-full items-center gap-2 rounded-md px-2.5 py-2 text-left text-[10px] text-gray-600 transition hover:bg-gray-50"
+                  >
+                    <Icon size={12} strokeWidth={1.8} />
+
+                    <span className="flex-1">
+                      {item.label}
+                    </span>
+
+                    {item.notification && (
+                      <span className="h-1.5 w-1.5 rounded-full bg-red-500" />
+                    )}
+                  </button>
+                );
+              }
+
+              
               return (
-                <button
+                <NavLink
                   key={item.label}
-                  type="button"
-                  onClick={() => navigate(item.path!)}
-                  className="relative flex w-full items-center gap-2 rounded-md px-2.5 py-2 text-left text-[10px] text-gray-600 transition hover:bg-gray-50"
+                  to={item.path ?? "/"}
+                  end={item.path === "/"}
+                  onClick={onClose}
+                  className={({ isActive }) =>
+                    `relative flex w-full items-center gap-2 rounded-md px-2.5 py-2 text-left text-[10px] transition ${
+                      isActive
+                        ? "bg-[#dff8d7] font-medium text-[#159447]"
+                        : "text-gray-600 hover:bg-gray-50"
+                    }`
+                  }
                 >
-                  <Icon
-                    size={12}
-                    strokeWidth={1.8}
-                  />
+                  <Icon size={12} strokeWidth={1.8} />
 
                   <span className="flex-1">
                     {item.label}
                   </span>
-
-                  {item.notification && (
-                    <span className="h-1.5 w-1.5 rounded-full bg-red-500" />
-                  )}
-                </button>
+                </NavLink>
               );
-            }
-
-            
-            return (
-              <NavLink
-                key={item.label}
-                to={item.path ?? "/"}
-                end={item.path === "/"}
-                className={({ isActive }) =>
-                  `relative flex w-full items-center gap-2 rounded-md px-2.5 py-2 text-left text-[10px] transition ${
-                    isActive
-                      ? "bg-[#dff8d7] font-medium text-[#159447]"
-                      : "text-gray-600 hover:bg-gray-50"
-                  }`
-                }
-              >
-                <Icon
-                  size={12}
-                  strokeWidth={1.8}
-                />
-
-                <span className="flex-1">
-                  {item.label}
-                </span>
-              </NavLink>
-            );
-          })}
-        </nav>
-      </div>
-    </aside>
+            })}
+          </nav>
+        </div>
+      </aside>
+    </>
   );
 }
 
 function EcommerceMenu() {
   return (
     <div>
-      
       <button
         type="button"
         className="flex w-full items-center gap-2 rounded-md px-2.5 py-2 text-left text-[10px] text-gray-600 transition hover:bg-gray-50"
       >
-        <ShoppingCart
-          size={12}
-          strokeWidth={1.8}
-        />
+        <ShoppingCart size={12} strokeWidth={1.8} />
 
         <span className="flex-1">
           E-Commerce
@@ -184,7 +215,6 @@ function EcommerceMenu() {
         />
       </button>
 
-      
       <div className="ml-4 mt-1 space-y-1 border-l border-gray-100 pl-3">
         <NavLink
           to="/ecommerce/products"
@@ -230,3 +260,6 @@ function EcommerceMenu() {
 }
 
 export default Sidebar;
+
+
+

@@ -1,13 +1,14 @@
-import Sidebar from "../../components/common/Sidebar"
+
 import Header from "../../components/common/Header"
 import ProductsPage from "../../components/products/ProductsPage"
+import Layout from "../../components/common/Layout"
 
 
 function Products() {
   return (
     <div className="flex min-h-screen bg-gray-50">
       
-      <Sidebar />
+      <Layout />
 
       <div className="flex min-w-0 flex-1 flex-col">
         

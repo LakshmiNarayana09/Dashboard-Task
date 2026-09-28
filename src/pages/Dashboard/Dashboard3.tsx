@@ -1,5 +1,5 @@
 
-import Sidebar from "../../components/common/Sidebar";
+import Layout from "../../components/common/Layout";
 import Header from "../../components/dashboard3/Header";
 import Overview from "../../components/dashboard3/Overview";
 
@@ -7,7 +7,7 @@ function Dashboard3() {
   return (
     <div className="flex min-h-screen bg-gray-50">
       
-      <Sidebar />
+      <Layout />
       
       <div className="flex min-w-0 flex-1 flex-col">
 
