@@ -1,4 +1,4 @@
-import { ordersData } from "../../data/dashboardData";
+import { ordersData } from "../../data/mockDashboardData";
 
 function OrdersTable() {
   return (

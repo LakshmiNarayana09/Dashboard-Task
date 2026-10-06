@@ -6,7 +6,7 @@ import {
   Gamepad2,
 } from "lucide-react";
 
-import { dashboardTransactionsData } from "../../data/dashboardData";
+import { dashboardTransactionsData } from "../../data/mockDashboardData";
 
 function Transactions() {
   return (

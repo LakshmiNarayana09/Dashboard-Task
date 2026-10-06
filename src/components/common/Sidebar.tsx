@@ -12,7 +12,9 @@ import {
   Users,
   X,
 } from "lucide-react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import { useCalendarFilter } from "../../context/CalendarFilterContext";
+import { CALENDAR_CATEGORIES } from "../../data/mockCalendarData";
 
 const menuItems = [
   {
@@ -21,14 +23,14 @@ const menuItems = [
     path: "/",
   },
   {
-    label: "Task",
-    icon: NotebookTabs,
-    path: "/task",
-  },
-  {
     label: "E-Commerce",
     icon: ShoppingCart,
     isEcommerce: true,
+  },
+  {
+    label: "Task",
+    icon: NotebookTabs,
+    path: "/task",
   },
   {
     label: "Calendar",
@@ -75,6 +77,8 @@ interface SidebarProps {
 
 function Sidebar({ isOpen, onClose }: SidebarProps) {
   const navigate = useNavigate();
+  const location = useLocation();
+  const isCalendarRoute = location.pathname.startsWith("/calendar");
 
   return (
     <>
@@ -190,9 +194,44 @@ function Sidebar({ isOpen, onClose }: SidebarProps) {
               );
             })}
           </nav>
+
+          {isCalendarRoute && <CalendarCategoriesSection />}
         </div>
       </aside>
     </>
+  );
+}
+
+function CalendarCategoriesSection() {
+  const { activeCategories, toggleCategory } = useCalendarFilter();
+
+  return (
+    <div className="mt-5">
+      <p className="mb-2 px-2 text-[8px] font-medium uppercase tracking-wider text-gray-400">
+        Calendars
+      </p>
+
+      <div className="space-y-1.5 px-2">
+        {CALENDAR_CATEGORIES.map((category) => {
+          const checked = activeCategories.includes(category.key);
+          return (
+            <label
+              key={category.key}
+              className="flex cursor-pointer items-center gap-2 text-[10px] text-gray-600"
+            >
+              <input
+                type="checkbox"
+                checked={checked}
+                onChange={() => toggleCategory(category.key)}
+                className="h-2.5 w-2.5 rounded border-gray-300 text-emerald-500 focus:ring-emerald-400"
+              />
+              <span className={`h-1.5 w-1.5 rounded-full ${category.colorClass}`} />
+              {category.label}
+            </label>
+          );
+        })}
+      </div>
+    </div>
   );
 }
 
@@ -260,6 +299,3 @@ function EcommerceMenu() {
 }
 
 export default Sidebar;
-
-
-

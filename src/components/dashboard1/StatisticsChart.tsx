@@ -9,7 +9,7 @@ import {
   YAxis,
 } from "recharts";
 
-import { statisticsData } from "../../data/dashboardData";
+import { statisticsData } from "../../data/mockDashboardData";
 
 
 

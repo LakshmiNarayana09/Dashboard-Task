@@ -6,7 +6,7 @@ import {
   Plus,
 } from "lucide-react";
 
-import type { Statistic } from "../../types/dashboard5";
+import type { Statistic } from "../../types/dashboard";
 
 interface StatisticsCardProps {
   statistic: Statistic;

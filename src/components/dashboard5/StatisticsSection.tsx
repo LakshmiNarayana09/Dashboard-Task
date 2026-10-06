@@ -5,7 +5,7 @@ import {
 } from "lucide-react";
 
 import StatisticsCard from "./StatisticsCard";
-import { statistics } from "../../data/dashboard5Data";
+import { statistics } from "../../data/mockDashboardData";
 
 function StatisticsSection() {
   return (

@@ -9,7 +9,7 @@ import {
   YAxis,
 } from "recharts";
 
-import { analyticsData } from "../../data/dashboardData";
+import { analyticsData } from "../../data/mockDashboardData";
 
 function AnalyticsChart() {
   return (

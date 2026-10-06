@@ -1,5 +1,5 @@
 
-import { newFollowersData } from "../../data/dashboardData";
+import { newFollowersData } from "../../data/mockDashboardData";
 
 function NewFollowers() {
   return (

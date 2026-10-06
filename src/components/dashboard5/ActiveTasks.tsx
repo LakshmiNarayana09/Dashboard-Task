@@ -1,7 +1,7 @@
 
 import { MoreHorizontal } from "lucide-react";
 
-import { activeTasks } from "../../data/dashboard5Data";
+import { activeTasks } from "../../data/mockDashboardData";
 
 function ActiveTasks() {
   return (

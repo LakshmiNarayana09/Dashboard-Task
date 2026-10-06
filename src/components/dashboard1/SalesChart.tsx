@@ -6,7 +6,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-import { salesData } from "../../data/dashboardData";
+import { salesData } from "../../data/mockDashboardData";
 
 
 

@@ -6,7 +6,7 @@ import {
   MessageCircle,
 } from "lucide-react";
 
-import { dashboardStatsData } from "../../data/dashboardData";
+import { dashboardStatsData } from "../../data/mockDashboardData";
 
 interface StatCardProps {
   title: string;

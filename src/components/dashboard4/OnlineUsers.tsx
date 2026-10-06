@@ -8,7 +8,7 @@ import {
 
 import { MoreHorizontal } from "lucide-react";
 
-import { onlineUsersData } from "../../data/dashboardData";
+import { onlineUsersData } from "../../data/mockDashboardData";
 
 const COLORS = [
   "#22a447",

@@ -9,7 +9,7 @@ import {
   YAxis,
 } from "recharts";
 
-import { visitsData, visitsSummary} from "../../data/dashboardData";
+import { visitsData, visitsSummary} from "../../data/mockDashboardData";
 
 function VisitsChart() {
   return (

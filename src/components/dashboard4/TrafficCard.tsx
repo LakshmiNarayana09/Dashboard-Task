@@ -1,6 +1,6 @@
 
 import { MoreHorizontal } from "lucide-react";
-import { trafficData } from "../../data/dashboardData";
+import { trafficData } from "../../data/mockDashboardData";
 
 function TrafficCard() {
   return (

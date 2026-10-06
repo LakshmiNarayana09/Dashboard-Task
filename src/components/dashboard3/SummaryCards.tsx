@@ -1,5 +1,5 @@
 
-import { summaryCardsData } from "../../data/dashboardData";
+import { summaryCardsData } from "../../data/mockDashboardData";
 
 function SummaryCards() {
   return (

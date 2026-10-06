@@ -1,5 +1,5 @@
 
-import { transactionsData } from "../../data/dashboardData";
+import { transactionsData } from "../../data/mockDashboardData";
 
 function Transactions() {
   return (

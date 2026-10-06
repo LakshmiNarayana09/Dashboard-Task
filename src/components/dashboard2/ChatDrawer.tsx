@@ -8,7 +8,7 @@ import {
   X,
 } from "lucide-react";
 
-import { chatMessages } from "../../data/dashboardData";
+import { chatMessages } from "../../data/mockDashboardData";
 
 function ChatDrawer({
   onClose,

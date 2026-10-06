@@ -1,5 +1,5 @@
 
-import { favoritesData, profileData } from "../../data/dashboardData";
+import { favoritesData, profileData } from "../../data/mockDashboardData";
 
 function Avatar({
   initial,

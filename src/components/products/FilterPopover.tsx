@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { ChevronDown, Calendar } from "lucide-react";
 import type { ProductFilters, ProductStatus } from "../../types/products";
-import { PRICE_MIN, PRICE_MAX } from "../../data/constantsData";
+import { PRICE_MIN, PRICE_MAX } from "../../data/mockProductsData";
 import { PriceRangeSlider } from "./PriceRangeSlider";
 
 interface FilterPopoverProps {

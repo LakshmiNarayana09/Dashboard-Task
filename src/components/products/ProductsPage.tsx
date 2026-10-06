@@ -6,7 +6,7 @@ import { ProductsTable } from "./ProductsTable";
 import { Pagination } from "../common/Pagination";
 import { AddProductDrawer } from "./AddProductDrawer";
 import { mockProducts } from "../../data/mockProductsData";
-import { PRICE_MIN, PRICE_MAX } from "../../data/constantsData";
+import { PRICE_MIN, PRICE_MAX } from "../../data/mockProductsData";
 
 import type {
   Product,

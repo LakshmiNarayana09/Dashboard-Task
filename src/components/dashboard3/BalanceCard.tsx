@@ -6,7 +6,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-import { balanceData, balanceSummary } from "../../data/dashboardData";
+import { balanceData, balanceSummary } from "../../data/mockDashboardData";
 
 function BalanceCard() {
   return (

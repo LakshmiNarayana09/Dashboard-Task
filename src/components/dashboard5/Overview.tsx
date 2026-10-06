@@ -1,5 +1,5 @@
 
-import DashboardSidebar from "./DashboardSidebar";
+import DashboardSidebar from "../common/DashboardSidebar";
 import DashboardHeader from "./DashboardHeader";
 
 import StatisticsSection from "./StatisticsSection";

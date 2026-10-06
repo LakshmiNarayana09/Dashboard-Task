@@ -1,5 +1,6 @@
 
 import {
+  LayoutDashboard,
   CalendarDays,
   ClipboardList,
   Contact,
@@ -17,6 +18,11 @@ import { NavLink } from "react-router-dom";
 
 function DashboardSidebar() {
   const menuItems = [
+    {
+      icon: LayoutDashboard,
+      label: "Dashboard",
+      path: "/",
+    },
     {
       icon: ShoppingBag,
       label: "Products",
@@ -77,6 +83,9 @@ function DashboardSidebar() {
   return (
     <aside className="hidden w-[40px] shrink-0 bg-white lg:block">
       <div className="flex min-h-screen flex-col items-center">
+        <div className="flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-br from-green-400 to-teal-500 text-[11px] font-bold text-white mt-[10px]">
+            F
+        </div>
         
         <nav className="flex w-full flex-col items-center pt-3">
           {menuItems.map((item) => {

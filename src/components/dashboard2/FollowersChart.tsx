@@ -6,7 +6,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-import { followersData, followersTotal } from "../../data/dashboardData";
+import { followersData, followersTotal } from "../../data/mockDashboardData";
 
 const colors = [
   "#28b36a",

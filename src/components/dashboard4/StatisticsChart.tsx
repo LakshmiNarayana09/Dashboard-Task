@@ -14,7 +14,7 @@ import {
   ChevronDown,
 } from "lucide-react";
 
-import { statisticsData } from "../../data/dashboardData";
+import { statisticsData } from "../../data/mockDashboardData";
 
 function StatisticsChart() {
   return (

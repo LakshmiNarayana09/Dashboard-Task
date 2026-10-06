@@ -1,7 +1,7 @@
 
 import { Bell, X } from "lucide-react";
 
-import { notificationsData } from "../../data/dashboardData";
+import { notificationsData } from "../../data/mockDashboardData";
 
 interface NotificationsProps {
   onClose?: () => void;

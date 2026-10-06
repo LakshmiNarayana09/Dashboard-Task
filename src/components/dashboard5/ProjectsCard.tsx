@@ -9,7 +9,7 @@ import {
   Tooltip,
 } from "recharts";
 
-import { projects } from "../../data/dashboard5Data";
+import { projects } from "../../data/mockDashboardData";
 
 function ProjectsCard() {
   return (

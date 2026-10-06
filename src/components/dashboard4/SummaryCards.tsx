@@ -5,7 +5,7 @@ import {
   UserRound,
 } from "lucide-react";
 
-import { summaryCards } from "../../data/dashboardData";
+import { summaryCards } from "../../data/mockDashboardData";
 
 function SummaryCards() {
   return (

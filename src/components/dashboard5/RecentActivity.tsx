@@ -1,7 +1,7 @@
 
 import { MoreHorizontal } from "lucide-react";
 
-import { activities } from "../../data/dashboard5Data";
+import { activities } from "../../data/mockDashboardData";
 
 function RecentActivity() {
   return (

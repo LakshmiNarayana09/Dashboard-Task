@@ -12,7 +12,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-import { statisticsChartData } from "../../data/dashboardData";
+import { statisticsChartData } from "../../data/mockDashboardData";
 
 function Statistics() {
   return (

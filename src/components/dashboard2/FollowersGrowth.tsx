@@ -9,7 +9,7 @@ import {
   YAxis,
 } from "recharts";
 
-import { followersGrowthData, followersGrowthSummary } from "../../data/dashboardData";
+import { followersGrowthData, followersGrowthSummary } from "../../data/mockDashboardData";
 
 function FollowersGrowth() {
   return (
